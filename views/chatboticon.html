@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Bar Example</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #message-bar {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        #message-bar:hover {
+            transform: translateY(-50%);
+        }
+
+        #message-content {
+            text-align: center;
+        }
+
+        #chatbot {
+            display: none;
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="message-bar">
+        <div id="message-content">
+            Click me to talk with me!
+        </div>
+    </div>
+    <div id="chatbot">
+        <!-- Add your chatbot interface content here -->
+        <!-- For example, you can include an iframe with your chatbot -->
+        <iframe src="chatbot.html" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+    <script>
+        const messageBar = document.getElementById("message-bar");
+        const chatbot = document.getElementById("chatbot");
+
+        messageBar.addEventListener("click", () => {
+            // Toggle the visibility of the chatbot interface
+            chatbot.style.display = chatbot.style.display === "block" ? "none" : "block";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/phone.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>></script>
+    <link rel="stylesheet" href="/css/stylesheet.css">
+    <link rel="stylesheet" media="screen and (max-width:1200px)" href="/phone.css">
+    <link rel="shortcut icon" href="/css/logo/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<header>
+
+    <div class="border"></div>
+    
+    <div class="navbar" id="navbar">
+        <img src="/images/logo/logo.png" alt="" />
+        <div class="add-logo border">
+            <i class="fa-solid fa-location-dot"></i>
+            <p class="address">Select your address</p>
+        </div>
+        <div class="searchbar">
+            <input type="search" id="searchin" placeholder="Search here" />
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <ul>
+            <li><a href="/" z>Home</a></li>
+            <li><a href="/about">About us</a></li>
+            <li><a href="#">Return &amp; Order</a></li>
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <a href="/login">Login</a>
+            </button>
+            <div class="add-to-cart">
+                <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+            
+        </ul>
+        <button onclick="ToggleEvent()" id="btn-success">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <!-- Button trigger modal -->
+        
+        <div class="menubar">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Order&Return</li>
+            </ul>
+        </div>
+    </div>
+</header>
+    
+    <body>
+        <div class="login-form">
+            <div class="login" id="grad">
+                <h2>Create Account</h2>
+                <form action="/user_register" method="post">
+                    <div class="form-group">
+                        <label for="first-name">Your username</label>
+                        <input type="text" id="username" name="username" placeholder="Your username" required />
+                        <label for="first-name">Your name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required />
+                        <label for="Mobile-number">Mobile number</label>
+                        <input type="text" id="phone" placeholder="phone" required />
+                        <label for="Email">Email (optional)</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your Email" required />
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="At least 8 characters" required />
+                        <div class="g-recaptcha" data-sitekey="6LcDQqkoAAAAAMEhUNaDaSguGdrdSNfZcy8UDl9P"></div>
+                        <br/>
+                    </div>
+                    <p>
+                        To verify your number, we will send you a text message with a temporary code. Message and data rates may apply.
+                    </p>
+                    <div class="form-group">
+                      <input type="submit" value="Register" onclick="login()"/>
+                    </div>
+                    <span>Already have an account?</span><a href="/login">Login</a>
+                </form>
+              </div>
+        </div>
+    </body>
+    <footer>
+        <div class="container" id="information">
+            <div class="info-box">
+                <div class="shipping-icon">
+                    <img src="/images/footerlogo/shipping icon.jpg" alt="shipping">
+                </div>
+                <div class="infocontact">
+                    <h4>FREE SHIPPING & RETURN</h4>
+                    <p>Free Shipping for order above Rs. 5000</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <div class="fav-icon">
+                    <img src="/images/footerlogo/star.png" alt="favorites">
+                </div>
+                <div class="infocontact">
+                    <h4>15000+ Unique </h4>
+                    <p>Best Online Jewellery store</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <div class="gift-icon">
+                    <img src="/images/footerlogo/gift.jpg     " alt="">
+                </div>
+                <div class="infocontact">
+                    <h4>Free Gifts on every purchase</h4>
+                    <p>Best Deals & Cashback Offers</p>
+                </div>
+            </div>
+        </div>
+        <div class="coloum" id="useful link">
+            <div class="col">
+                <h3>Useful links</h3><br>
+                <a href="#">Delevery information</a><br>
+                <a href="#">International shipping</a><br>
+                <a href="#">Track your order</a><br>
+                <a href="#">Payment options</a><br>
+                <a href="#">Return</a><br>
+            </div>
+            <div class="col">
+                <h3>information</h3><br>
+                <a href="#">Offer & Contact details</a><br>
+                <a href="#">About ECOFURNISH</a><br>
+                <a href="#">Help & FAQS</a><br>
+                <a href="#">Careers</a><br>
+                <a href="#">Blog</a><br>
+            </div>
+            <div class="col" id="CONTACT">
+                <h3>Contact us</h3><br>
+
+                <a href="#">Write to us</a><br>
+                <a href="#">9638931693</a><br>
+                <a href="#">Chat with us</a><br>
+            </div>
+            <div>
+                <div class="omJewellerydownlord">
+                    <h3>Downlord the ECOFURNISH App Now</h3>
+                    <div class="list-group">
+                        <a href="#">
+                            <img src="/images/footerlogo/apple store.jpg" width="150px" height="60px"
+                                alt="available on apple store">
+                        </a>
+                        <a href="#">
+                            <img src="/images/footerlogo/google-plastore.jpg" width="150px" height="60px"
+                                alt="available on google playstore">
+                        </a>
+                    </div>
+                    <div class="followus">
+                        <h4>Follow us On</h4>
+                        <div class="icon-logo">
+                            <div class="icon">
+                                <a href=""><img src="/images/footerlogo/facebook logo.jpg" alt="Facebook"></a>
+                            </div>
+                            <div class="icon">
+                                <a href=""><img src="/images/footerlogo/twitter logo.jpg" alt="Twitter"></a>
+                            </div>
+                            <div class="icon">
+                                <a href=""><img src="/images/footerlogo/whatsapp logo.jpg" alt="whatsapp"></a>
+                            </div>
+                            <div class="icon">
+                                <a href="https://www.instagram.com/"><img src="/images/footerlogo/instagram logo.png"
+                                        alt="instagram"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </footer>
+    <div class="copyright">
+        Copy Rights &copy;2023 Ecofurnish. All Rights Reserved
+    </div>
+    <script>
+        function login() {
+            alert("account created sucessfully");
+        }
+        let menubar = document.getElementsByClassName('.menubar');
+        let btn = document.getElementById('#tn-success');
+        function ToggleEvent() {
+            if (menubar.style.display != 'none') {
+                menubar.style.display = 'none';
+            }
+            else {
+                menubar.style.display = 'block';
+            }
+        }
+
+
+    </script>
+
+</html>

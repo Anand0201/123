@@ -1,0 +1,89 @@
+.login {
+    background-color: transparent;
+    width: 30rem;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px black;
+    margin-top: 2%;
+    margin-bottom: 10%;
+
+  }
+
+h2 {
+    text-align: center;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+
+  .form-group input[type="submit"] {
+    background-color:#198754;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  }
+
+  .form-group input[type="submit"]:hover {
+    background-color: #157347;
+  }
+
+  /* Styles for the button */
+  #google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4285f4;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom: 4px solid black;
+    cursor: pointer;
+  }
+
+  /* Styles for the button on hover */
+  .google-btn:hover {
+    background-color:  #357ae8;
+  }
+
+  /* Styles for the button on click */
+  .google-btn:active {
+    background-color: #1669f2;
+  }
+ 
+  .googlebtn {
+    display: flex;
+    justify-content: center;
+  }
+
+  .googlebtn img {
+    padding: 10px;
+    width: 3vw;
+    height: 8vh;
+    margin-left: 20px;
+    background-color: #4285f4;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+    border-bottom: 4px solid black;
+  }

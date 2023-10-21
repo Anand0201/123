@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        #dashboard {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        #dashboard-content {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #header {
+            text-align: center;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .button {
+            flex: 1;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        #waste-info {
+            text-align: left;
+        }
+
+        select,
+        input[type="number"],
+        input[type="text"] {
+            padding: 10px;
+            width: 100%;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .logout-button {
+            display: block;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #d9534f;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .logout-button:hover {
+            background-color: #c9302c;
+        }
+
+        #submit-button {
+            display: block;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #submit-button:hover {
+            background-color: #0056b3;
+        }
+
+        #success-message {
+            text-align: center;
+            color: green;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dashboard">
+        <div id="dashboard-content">
+            <div id="header">
+                <h1>Welcome <%= fullname %></h1>
+            </div>
+
+            <h2>Dashboard</h2>
+            <div class="button-container">
+                <a href="#" class="button">View Requests</a>
+                <a href="#" class="button">Update Profile</a>
+                <a href="/login" class="button logout-button">Log Out</a>
+            </div>
+
+            <h2>Waste Information</h2>
+            <div id="waste-info">
+                <label for="total-weight">Total Weight (kg):</label>
+                <input type="number" id="total-weight" placeholder="Enter total weight">
+
+                <label for="waste-generated">Types of Waste Generated:</label>
+                <input type="text" id="waste-generated" placeholder="Enter types of waste generated">
+
+                <label for="activity">Activity:</label>
+                <input type="text" id="activity" placeholder="Enter activity">
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" placeholder="Enter location">
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" placeholder="Enter address">
+            </div>
+
+            <button id="submit-button">Submit</button>
+            <div id="success-message">Submitted Successfully</div>
+        </div>
+    </div>
+
+    <script>
+        const submitButton = document.getElementById("submit-button");
+        const successMessage = document.getElementById("success-message");
+
+        submitButton.addEventListener("click", () => {
+            // You can add your submission logic here, for example, sending the data to a server.
+            // For now, just show the success message.
+            successMessage.style.display = "block";
+        });
+    </script>
+</body>
+
+</html>
